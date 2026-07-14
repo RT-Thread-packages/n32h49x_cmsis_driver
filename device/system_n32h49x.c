@@ -94,7 +94,7 @@
 #if SYSCLK_SRC == SYSCLK_USE_HSI
 
 #if SYSCLK_FREQ != HSI_VALUE
-#error SYSCL_FREQ must be set to HSI_VALUE
+#error SYSCLK_FREQ must be set to HSI_VALUE
 #endif
 
 #elif SYSCLK_SRC == SYSCLK_USE_HSE
@@ -104,7 +104,7 @@
 #endif
 
 #if SYSCLK_FREQ != HSE_VALUE
-#error SYSCL_FREQ must be set to HSE_VALUE
+#error SYSCLK_FREQ must be set to HSE_VALUE
 #endif
 
 #elif SYSCLK_SRC == SYSCLK_USE_HSI_PLL
@@ -212,7 +212,7 @@
                                     uint32_t delay_end;                   \
                                     CPU_DELAY_INTI();                     \
                                     /* Delay*/                            \
-                                    delay_end = DWT_CYCCNT + (usec * (SYSCLK_FREQ/1000000)); \
+                                    delay_end = DWT_CYCCNT + ((usec) * (SYSCLK_FREQ/1000000)); \
                                     while(DWT_CYCCNT < delay_end){};      \
                                     CPU_DELAY_DISABLE();                  \
                                   }while(0) 
