@@ -10744,7 +10744,7 @@ typedef struct
 #define USART_CTRL1_OSPM        ((uint32_t)0x04000000U) /* Oversampling mode */
 #define USART_CTRL1_SWAP        ((uint32_t)0x08000000U) /* Swap TX/RX pins */
 #define USART_CTRL1_IFCEN       ((uint32_t)0x10000000U) /* Idle frame controllable enable */
-#define USART_CTRL1_TDEN       	((uint32_t)0x20000000U) /* First Byte Delay Fixed Enable*/
+#define USART_CTRL1_TEDEN       	((uint32_t)0x20000000U) /* First Byte Delay Fixed Enable*/
 
 /** Bit definition for USART_CTRL2 register **/
 #define USART_CTRL2_ADDR        ((uint32_t)0x0000000FU) /* Address of the USART node */
