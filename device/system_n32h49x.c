@@ -394,8 +394,11 @@ void SystemCoreClockUpdate(void)
  */
 static void SetSysClock(void)
 {   
-    uint32_t tmpregister, tmpregister1;
+    uint32_t tmpregister;
+#if ((SYSCLK_SRC == SYSCLK_USE_HSI_PLL) || (SYSCLK_SRC == SYSCLK_USE_HSE_PLL))
+    uint32_t tmpregister1;
     const uint8_t PLLoutpresTable[10] = {0, 0, 1, 1, 2, 2, 2, 2, 3, 3};
+#endif
     
 #if ((SYSCLK_SRC == SYSCLK_USE_HSE) || (SYSCLK_SRC == SYSCLK_USE_HSE_PLL))
     uint32_t HSEStatus;
